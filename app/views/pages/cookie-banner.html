@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK cookie banner page
+{% endblock %}
+
+{% block bodyStart %}
+  <form action="/form-handler" method="post" novalidate>
+    {{ govukCookieBanner({
+      ariaLabel: "Cookies on [name of service]",
+      messages: [
+        {
+          headingText: "Cookies on GOV.UK",
+          html: '<p class="govuk-body">We use some essential cookies to make this service work.</p>
+            <p class="govuk-body">We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.</p>
+            <p class="govuk-body">We also use cookies set by other sites to help us deliver content from their services.</p>',
+          actions: [
+            {
+              text: "Accept additional cookies",
+              type: "submit",
+              name: "cookies[additional]",
+              value: "yes"
+            },
+            {
+              text: "Reject additional cookies",
+              type: "submit",
+              name: "cookies[additional]",
+              value: "no"
+            },
+            {
+              text: "View cookies",
+              href: "#"
+            }
+          ]
+        }
+      ]
+    }) }}
+  </form>
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">This is a landing page</h1>
+{% endblock %}
