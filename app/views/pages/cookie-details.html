@@ -1,0 +1,552 @@
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Cookies on GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Details about cookies on GOV.UK</h1>
+        <p class="govuk-body">GOV.UK puts small files (known as ‘cookies’) onto your computer to collect information about how you browse the site. Find out more about the cookies we use, what they’re for and when they expire.</p>
+
+        <h2 class="govuk-heading-m">Cookies that measure website use</h2>
+
+        <p class="govuk-body">
+            We use Google Analytics cookies and a Real User Monitoring (RUM) cookie from SpeedCurve to collect information about how you use GOV.UK.
+        </p>
+
+        <p class="govuk-body">
+           We use the following Google Analytics cookies on GOV.UK:
+        </p>
+
+        {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "_ga"
+                },
+                {
+                    text: "These help us count how many people visit GOV.UK and other government digital services by tracking if you’ve visited before"
+                },
+                {
+                    text: "2 years"
+                }
+                ],
+                [
+                {
+                    text: "_gid"
+                },
+                {
+                    text: "These help us count how many people visit GOV.UK and other government digital services by tracking if you’ve visited before"
+                },
+                {
+                    text: "24 hours"
+                }
+                ],
+                [
+                {
+                    text: "_ga_S5RQ7FTGVR"
+                },
+                {
+                    text: "Used by Google Analytics to find and track an individual session with your device"
+                },
+                {
+                    text: "2 years"
+                }
+                ]
+            ]
+            }) }}
+
+            <p class="govuk-body">You can opt out of Google Analytics cookies on the<a href="#" class="govuk-link"> GOV.UK cookies page</a>or by installing the <a href="#" class="govuk-link">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+            <p class="govuk-body">You can read Google’s overview of <a href="#" class="govuk-link">data practices within Google Analytics</a>.</p>
+
+            <p class="govuk-body">Other government digital services also use Google Analytics cookies to collect information about how you use them and they share this information with us. Each digital service has its own consent mechanism and cookie policy that provides more information about their use of cookies.</p>
+
+            <p class="govuk-body">The <a href="#" class="govuk-link">GOV.UK Privacy Notice</a> has more information about the data we collect using Google Analytics cookies and information we receive from other digital services.</p>
+
+            <p class="govuk-body">We also set our own cookie to understand how people move through the site:</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "analytics_next_page_call"
+                },
+                {
+                    text: "This lets us know the next page you visit on GOV.UK, so we can make journeys better"
+                },
+                {
+                    text: "When you close your browser"
+                }
+                ]
+            ]
+            }) }}
+
+            <p class="govuk-body">SpeedCurve RUM sets the following cookie:</p>
+
+             {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "lux_uid"
+                },
+                {
+                    text: "This lets us understand the web performance you experience while on GOV.UK"
+                },
+                {
+                    text: "1 day or 30 minutes of inactivity"
+                }
+                ]
+            ]
+            }) }}
+
+            <h3 class="govuk-heading-s">Comparing different versions of a webpage</h3>
+
+            <p class="govuk-body">We sometimes use analytics to try out different versions of pages to see which work better for users (‘multivariate testing’). We’ll save a cookie so that you consistently see the same version when browsing GOV.UK.</p>
+
+            <p class="govuk-body">The cookie name will change but will be in the form ‘ABTest-[Test name]’ where the ‘Test name’ describes which part of GOV.UK is being tested.</p>
+
+            <p class="govuk-body">This type of cookie will usually expire after between 1 and 4 weeks, but this may be longer for more in-depth tests.</p>
+
+            <p class="govuk-body">If you have not opted in to this type of cookie, you’ll see the standard version of the page being tested.</p>
+
+            <h3 class="govuk-heading-s">JavaScript detection</h3>
+
+            <p class="govuk-body">We measure how many people visiting GOV.UK are using JavaScript, so that the site works for as many users as possible.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "JS-Detection"
+                },
+                {
+                    text: "This tells us if you are browsing GOV.UK while running JavaScript"
+                },
+                {
+                    text: "1 year"
+                }
+                ]
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Cookies that help with our communications and marketing</h2>
+
+            <p class="govuk-body">Some GOV.UK pages may contain content from other sites, like YouTube or Flickr, which may set their own cookies. These sites are sometimes called ‘third party’ services. This tells us how many people are seeing the content and whether it’s useful.</p>
+
+            <p class="govuk-body">In addition, if you share a link to a GOV.UK page, the service you share it on (for example, Facebook) may set a cookie. We have no control over cookies set on other websites - you can turn them off, but not through us.</p>
+
+            <h3 class="govuk-heading-s">YouTube videos</h3>
+
+            <p class="govuk-body">We use YouTube to show videos on some GOV.UK pages. YouTube sets cookies when you visit one of these pages.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "_use_hitbox"
+                },
+                {
+                    text: "This is a randomly generated number that identifies your browser"
+                },
+                {
+                    text: "When you close your browser"
+                }
+                ],
+                [
+                {
+                    text: "VISITOR_INFO1_LIVE"
+                },
+                {
+                    text: "	Lets YouTube count the views of embedded YouTube videos"
+                },
+                {
+                    text: "9 months"
+                }
+                ]
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Cookies that remember your settings</h2>
+
+            <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using GOV.UK.</p>
+
+            <h3 class="govuk-heading-s">Messages across GOV.UK</h3>
+
+            <p class="govuk-body">We might display a message on all GOV.UK pages to tell you about an important event or situation. We’ll save a cookie that will let us know how many times you’ve seen it, or if you’ve dismissed it.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "global_bar_seen"
+                },
+                {
+                    text: "Remembers the number of times you’ve seen the message, or if you’ve dismissed it"
+                },
+                {
+                    text: "12 weeks"
+                }
+                ]
+            ]
+            }) }}
+
+            <h3 class="govuk-heading-s">GOV.UK app message</h3>
+
+            <p class="govuk-body">If you’re using an Android mobile, we might display a message on some GOV.UK pages to tell you about the GOV.UK app. We’ll save a cookie that lets us know if you’ve dismissed the message.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "app_promo_banner"
+                },
+                {
+                    text: "Remembers if you’ve dismissed the message"
+                },
+                {
+                    text: "12 weeks"
+                }
+                ]
+            ]
+            }) }}
+
+            <h3 class="govuk-heading-s">Surveys</h3>
+
+            <p class="govuk-body">We will sometimes select users to take part in a survey, for example our performance survey. If you take part, or dismiss the survey, we’ll save a cookie that lets us know you’ve seen the message so that we do not show it to you again.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "govuk_taken[NameOfSurvey]"
+                },
+                {
+                    text: "Saves a message to remember if you’ve taken the survey or dismissed it"
+                },
+                {
+                    text: "4 months"
+                }
+                ],
+                [
+                {
+                    text: "govuk_surveySeen[NameOfSurvey]"
+                },
+                {
+                    text: "Saves a message to remember how many times you’ve seen the survey"
+                },
+                {
+                    text: "2 years"
+                }
+                ]
+            ]
+            }) }}
+
+            <h3 class="govuk-heading-s">Your location</h3>
+
+            <p class="govuk-body">We may give you the option of saving your home nation on pages where guidance is different if you’re in England, Scotland, Wales or Northern Ireland (for example, the <a href="" class="govuk-link">UK bank holidays</a> page).</p>
+
+            <p class="govuk-body">If you save your location, we’ll save a cookie to your device so we can show you the most relevant information next time you visit that page.</p>
+
+            {{ govukTable({
+                firstCellIsHeader: false,
+                classes: "",
+                head: [
+                    {
+                    text: "Name"
+                    },
+                    {
+                    text: "Purpose"
+                    },
+                    {
+                    text: "Expires"
+                    }
+                ],
+                rows: [
+                    [
+                    {
+                        text: "user_nation"
+                    },
+                    {
+                        text: "Remembers if you saved your location on pages that can be adjusted based on your home nation"
+                    },
+                    {
+                        text: "365 days"
+                    }
+                    ]
+                ]
+                }) }}
+
+            <h2 class="govuk-heading-m">Strictly necessary cookies</h2>
+
+            <h3 class="govuk-heading-s">Your progress when applying for a licence</h3>
+
+            <p class="govuk-body">When you use the ‘apply for a licence’ service, we’ll set a cookie to remember your progress through the forms. These cookies do not store your personal data and are deleted once you’ve completed the transaction.</p>
+
+            {{ govukTable({
+                firstCellIsHeader: false,
+                classes: "",
+                head: [
+                    {
+                    text: "Name"
+                    },
+                    {
+                    text: "Purpose"
+                    },
+                    {
+                    text: "Expires"
+                    }
+                ],
+                rows: [
+                    [
+                    {
+                        text: "licensing_session"
+                    },
+                    {
+                        text: "Set to remember information you’ve entered into a form when applying for a licence"
+                    },
+                    {
+                        text: "When you close your browser"
+                    }
+                    ]
+                ]
+                }) }}
+
+            <h3 class="govuk-heading-s">Contacting GOV.UK</h3>
+
+            {{ govukTable({
+                firstCellIsHeader: false,
+                classes: "",
+                head: [
+                    {
+                    text: "Name"
+                    },
+                    {
+                    text: "Purpose"
+                    },
+                    {
+                    text: "Expires"
+                    }
+                ],
+                rows: [
+                    [
+                    {
+                        text: "govuk_contact_referrer"
+                    },
+                    {
+                        text: "This lets us know the last page you visited before using the contact GOV.UK form"
+                    },
+                    {
+                        text: "1 day"
+                    }
+                    ]
+                ]
+                }) }}
+
+            <h3 class="govuk-heading-s">GOV.UK email subscriptions</h3>
+
+            <p class="govuk-body">If you sign up to receive email notifications from GOV.UK, we will save a cookie if you change your subscriptions. This cookie is deleted when you close your browser.</p>
+
+            {{ govukTable({
+                firstCellIsHeader: false,
+                classes: "",
+                head: [
+                    {
+                    text: "Name"
+                    },
+                    {
+                    text: "Purpose"
+                    },
+                    {
+                    text: "Expires"
+                    }
+                ],
+                rows: [
+                    [
+                    {
+                        text: "email-alert-frontend_session"
+                    },
+                    {
+                        text: "This remembers you as you change your email subscriptions"
+                    },
+                    {
+                        text: "When you close your browser"
+                    }
+                    ]
+                ]
+                }) }}
+
+            <h3 class="govuk-heading-s">Cookies message</h3>
+
+            <p class="govuk-body">You may see a banner when you visit GOV.UK inviting you to accept cookies or review your settings. We’ll set cookies so that your computer knows you’ve seen it and not to show it again, and also to store your settings.</p>
+
+            {{ govukTable({
+            firstCellIsHeader: false,
+            classes: "",
+            head: [
+                {
+                text: "Name"
+                },
+                {
+                text: "Purpose"
+                },
+                {
+                text: "Expires"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "cookies_policy"
+                },
+                {
+                    text: "Saves your cookie consent settings"
+                },
+                {
+                    text: "1 year"
+                }
+                ],
+                [
+                {
+                    text: "cookies_preferences_set"
+                },
+                {
+                    text: "Lets us know that you’ve saved your cookie consent settings"
+                },
+                {
+                    text: "1 year"
+                }
+                ]
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Change your settings</h2>
+
+            <p class="govuk-body">You can <a href="" class="govuk-link">change which cookies you’re happy for us to use</a>.</p>
+            
+
+
+
+    </div></div>
+
+{% endblock %}
