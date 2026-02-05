@@ -14,3 +14,25 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {{ govukHeader() }}
    
 {% endblock %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    items: [
+        {
+        href: "/pages/privacy-notice.html",
+        text: "Privacy"
+      },
+      {
+        href: "/pages/cookies.html",
+        text: "Cookies"
+      }
+      
+    ]
+  }
+}) }}
+
+{% endblock %}
