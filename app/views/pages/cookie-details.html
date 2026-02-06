@@ -30,8 +30,25 @@
             We use Google Analytics cookies and a Real User Monitoring (RUM) cookie from SpeedCurve to collect information about how you use GOV.UK.
         </p>
 
+        <p class="govuk-body">We collect the information to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                measure general website usage
+            </li>
+            <li>
+                understand user behaviour in more detail
+            </li>
+        </ul>
+
+        <h3 class="govuk-heading-s">General website usage</h3>
+
         <p class="govuk-body">
-           We use the following Google Analytics cookies on GOV.UK:
+           We use Google Analytics cookies to collect data about how you use the website so that we can improve it. For example, we could use this data to find out what the most commonly used search terms on GOV.UK are.
+        </p>
+
+        <p class="govuk-body">
+           This data collection is automatically on unless you opt out on the <a href="/pages/cookies.html" class="govuk-link">GOV.UK cookies page</a>.
         </p>
 
         {{ govukTable({
@@ -73,7 +90,7 @@
                 ],
                 [
                 {
-                    text: "_ga_S5RQ7FTGVR"
+                    text: "_ga<measurement-id>"
                 },
                 {
                     text: "Used by Google Analytics to find and track an individual session with your device"
@@ -85,15 +102,13 @@
             ]
             }) }}
 
-            <p class="govuk-body">You can opt out of Google Analytics cookies on the<a href="/pages/cookies.html" class="govuk-link"> GOV.UK cookies page</a> or by installing the <a href="#" class="govuk-link">Google Analytics Opt-out Browser Add-on</a>.</p>
+            <!-- CONTENT UPDATE START BELOW -->
 
-            <p class="govuk-body">You can read Google’s overview of <a href="#" class="govuk-link">data practices within Google Analytics</a>.</p>
+            <h3 class="govuk-heading-s">User behaviour analysis</h3>
 
-            <p class="govuk-body">Other government digital services also use Google Analytics cookies to collect information about how you use them and they share this information with us. Each digital service has its own consent mechanism and cookie policy that provides more information about their use of cookies.</p>
+            <p class="govuk-body">We also collect Google Analytics data to understand how people interact with the website. For example, we could use the data to learn about how you interact with the different website features during your visit.</p>
 
-            <p class="govuk-body">The <a href="#" class="govuk-link">GOV.UK Privacy Notice</a> has more information about the data we collect using Google Analytics cookies and information we receive from other digital services.</p>
-
-            <p class="govuk-body">We also set our own cookie to understand how people move through the site:</p>
+            <p class="govuk-body">We only collect this data if you’ve accepted additional cookies. You can change your cookie settings on the <a href="/pages/cookies.html" class="govuk-link"> GOV.UK cookies page</a>. You can also opt out of Google Analytics cookies by installing the <a href="#" class="govuk-link">Google Analytics Opt-out Browser Add-on</a>.</p>
 
             {{ govukTable({
             firstCellIsHeader: false,
@@ -112,19 +127,47 @@
             rows: [
                 [
                 {
-                    text: "analytics_next_page_call"
+                    text: "_ga"
                 },
                 {
-                    text: "This lets us know the next page you visit on GOV.UK, so we can make journeys better"
+                    text: "These help us count how many people visit GOV.UK and other government digital services by tracking if you’ve visited before"
                 },
                 {
-                    text: "When you close your browser"
+                    text: "2 years"
+                }
+                ],
+                [
+                {
+                    text: "_gid"
+                },
+                {
+                    text: "These help us count how many people visit GOV.UK and other government digital services by tracking if you’ve visited before"
+                },
+                {
+                    text: "24 hours"
+                }
+                ],
+                [
+                {
+                    text: "_ga<measurement-id>"
+                },
+                {
+                    text: "Used by Google Analytics to find and track an individual session with your device"
+                },
+                {
+                    text: "2 years"
                 }
                 ]
             ]
             }) }}
 
-            <p class="govuk-body">SpeedCurve RUM sets the following cookie:</p>
+            <p class="govuk-body">You can read Google’s overview of <a href="#" class="govuk-link">data practices within Google Analytics</a>.</p>
+
+            <p class="govuk-body">Other government digital services also use Google Analytics cookies to collect information about how you use them and they share this information with us. Each digital service has its own consent mechanism and cookie policy that provides more information about their use of cookies.</p>
+
+            <p class="govuk-body">The <a href="#" class="govuk-link">GOV.UK Privacy Notice</a> has more information about the data we collect using Google Analytics cookies and information we receive from other digital services.</p>
+
+            <p class="govuk-body">We also use LUX Real User Monitoring software cookies from SpeedCurve to measure how well the website performed during your visit.</p>
 
              {{ govukTable({
             firstCellIsHeader: false,
@@ -154,6 +197,17 @@
                 ]
             ]
             }) }}
+
+            <div class="govuk-phase-banner govuk-body govuk-!-margin-bottom-5">
+                <p class="govuk-phase-banner__content">
+                    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag">
+                    Checkpoint
+                    </strong>
+                    <span class="govuk-phase-banner__text">
+                    Confirm if we are keeping this content.
+                    </span>
+                </p>
+            </div>
 
             <h3 class="govuk-heading-s">Comparing different versions of a webpage</h3>
 
@@ -197,6 +251,17 @@
                 ]
             ]
             }) }}
+
+            <div class="govuk-phase-banner govuk-body govuk-!-margin-bottom-5">
+                <p class="govuk-phase-banner__content">
+                    <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag">
+                    Checkpoint
+                    </strong>
+                    <span class="govuk-phase-banner__text">
+                    End of checkpoint
+                    </span>
+                </p>
+            </div>
 
             <h2 class="govuk-heading-m">Cookies that help with our communications and marketing</h2>
 
@@ -542,7 +607,8 @@
 
             <h2 class="govuk-heading-m">Change your settings</h2>
 
-            <p class="govuk-body">You can <a href="/pages/cookies.html" class="govuk-link">change which cookies you’re happy for us to use</a>.</p>
+            <p class="govuk-body">
+                You can change which cookies you’re happy for us to use on the <a href="/pages/cookies.html" class="govuk-link">GOV.UK cookies page</a>.</p>
 
             <p class="govuk-body-s">Last updated 21 January 2026</p>
 
