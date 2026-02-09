@@ -44,7 +44,7 @@
         <h3 class="govuk-heading-s">General website usage</h3>
 
         <p class="govuk-body">
-           We use Google Analytics cookies to collect data about how you use the website so that we can improve it. For example, we could use this data to find out what the most commonly used search terms on GOV.UK are.
+           We use Google Analytics cookies to collect general information about how GOV.UK is used so that we can improve it. For example, we could use this data to find out what the most visited pages on GOV.UK are.
         </p>
 
         <p class="govuk-body">
@@ -104,9 +104,9 @@
 
             <h3 class="govuk-heading-s">User behaviour analysis</h3>
 
-            <p class="govuk-body">We also collect Google Analytics data to understand how people interact with the website. For example, we could use the data to learn about how you interact with the different website features during your visit.</p>
+            <p class="govuk-body">We also collect Google Analytics information to learn about how people use the website in more detail. For example, we could use the information to learn about how you interact with the different website features during your visit so that we can make the website better.</p>
 
-            <p class="govuk-body">We only collect this data if you’ve accepted additional cookies. You can change your cookie settings on the <a href="/pages/cookies.html" class="govuk-link"> GOV.UK cookies page</a>. You can also opt out of Google Analytics cookies by installing the <a href="#" class="govuk-link">Google Analytics Opt-out Browser Add-on</a>.</p>
+            <p class="govuk-body">We only collect this data if you’ve accepted additional cookies for measuring user behaviour and website performance. You cannot be directly identified from the data.</p>
 
             {{ govukTable({
             firstCellIsHeader: false,
@@ -159,11 +159,13 @@
             ]
             }) }}
 
+            <p class="govuk-body">You can change your cookie settings on the <a href="/pages/cookies.html" class="govuk-link"> GOV.UK cookies page</a>. You can also opt out of Google Analytics cookies by installing the <a href="#" class="govuk-link">Google Analytics Opt-out Browser Add-on</a>.</p>
+
             <p class="govuk-body">You can read Google’s overview of <a href="#" class="govuk-link">data practices within Google Analytics</a>.</p>
 
             <p class="govuk-body">Other government digital services also use Google Analytics cookies to collect information about how you use them and they share this information with us. Each digital service has its own consent mechanism and cookie policy that provides more information about their use of cookies.</p>
 
-            <p class="govuk-body">The <a href="#" class="govuk-link">GOV.UK Privacy Notice</a> has more information about the data we collect using Google Analytics cookies and information we receive from other digital services.</p>
+            <p class="govuk-body">The <a href="#" class="govuk-link">GOV.UK Privacy notice</a> has more information about the data we collect using Google Analytics cookies and information we receive from other digital services.</p>
 
             <p class="govuk-body">We also use LUX Real User Monitoring software cookies from SpeedCurve to measure how well the website performed during your visit.</p>
 
@@ -187,7 +189,7 @@
                     text: "lux_uid"
                 },
                 {
-                    text: "This lets us understand the web performance you experience while on GOV.UK"
+                    text: "These let us understand how well GOV.UK pages performed on your device and if there were any JavaScript errors"
                 },
                 {
                     text: "1 day or 30 minutes of inactivity"
@@ -216,39 +218,6 @@
             <p class="govuk-body">This type of cookie will usually expire after between 1 and 4 weeks, but this may be longer for more in-depth tests.</p>
 
             <p class="govuk-body">If you have not opted in to this type of cookie, you’ll see the standard version of the page being tested.</p>
-
-            <h3 class="govuk-heading-s">JavaScript detection</h3>
-
-            <p class="govuk-body">We measure how many people visiting GOV.UK are using JavaScript, so that the site works for as many users as possible.</p>
-
-            {{ govukTable({
-            firstCellIsHeader: false,
-            classes: "",
-            head: [
-                {
-                text: "Name"
-                },
-                {
-                text: "Purpose"
-                },
-                {
-                text: "Expires"
-                }
-            ],
-            rows: [
-                [
-                {
-                    text: "JS-Detection"
-                },
-                {
-                    text: "This tells us if you are browsing GOV.UK while running JavaScript"
-                },
-                {
-                    text: "1 year"
-                }
-                ]
-            ]
-            }) }}
 
             <div class="govuk-phase-banner govuk-body govuk-!-margin-bottom-5">
                 <p class="govuk-phase-banner__content">
