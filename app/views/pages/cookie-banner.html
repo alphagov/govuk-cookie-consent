@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block bodyStart %}
-  <form action="/form-handler" method="post" novalidate>
+  <form action="cookie-banner" method="post" novalidate>
     {{ govukCookieBanner({
-      ariaLabel: "Cookies on [name of service]",
+      ariaLabel: "Cookies on GOV.UK",
       messages: [
         {
           headingText: "Cookies on GOV.UK",
@@ -17,13 +17,13 @@
             {
               text: "Accept additional cookies",
               type: "submit",
-              name: "cookies[additional]",
+              name: "cookies",
               value: "yes"
             },
             {
               text: "Reject additional cookies",
               type: "submit",
-              name: "cookies[additional]",
+              name: "cookies",
               value: "no"
             },
             {

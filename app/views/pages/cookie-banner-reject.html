@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK cookie banner page
+{% endblock %}
+
+{% block bodyStart %}
+  <form action="banner-reject " method="post" novalidate>
+    {{ govukCookieBanner({
+      ariaLabel: "Cookies on GOV.UK",
+      messages: [
+        {
+          html: '<p class="govuk-body">You have rejected additional cookies. You can <a href="/pages/cookies" class="govuk-link">change your cookie settings</a> at any time.</p>',
+          actions: [
+            {
+              text: "Hide cookie message",
+              type: "submit",
+              name: "hide",
+              value: "yes"
+            }
+          ]
+        }
+      ]
+    }) }}
+  </form>
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">This is a landing page</h1>
+
+<a href="/pages/cookie-banner.html" class="govuk-link">Go back to the cookie banner page</a>
+
+{% endblock %}
