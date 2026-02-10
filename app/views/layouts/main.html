@@ -20,17 +20,155 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% block footer %}
 
 {{ govukFooter({
+  navigation: [
+    {
+      title: "Services and information",
+      width: "two-thirds",
+      columns: 2,
+      items: [
+        {
+          href: "#",
+          text: "Benefits"
+        },
+        {
+          href: "#",
+          text: "Births, deaths, marriages and care"
+        },
+        {
+          href: "#",
+          text: "Business and self-employed"
+        },
+        {
+          href: "#",
+          text: "Childcare and parenting"
+        },
+        {
+          href: "#",
+          text: "Citizenship and living in the UK"
+        },
+        {
+          href: "#",
+          text: "Crime, justice and the law"
+        },
+        {
+          href: "#",
+          text: "Disabled people"
+        },
+        {
+          href: "#",
+          text: "Driving and transport"
+        },
+        {
+          href: "#",
+          text: "Education and learning"
+        },
+        {
+          href: "#",
+          text: "Employing people"
+        },
+        {
+          href: "#",
+          text: "Environment and countryside"
+        },
+        {
+          href: "#",
+          text: "Housing and local services"
+        },
+        {
+          href: "#",
+          text: "Money and tax"
+        },
+        {
+          href: "#",
+          text: "Passports, travel and living abroad"
+        },
+        {
+          href: "#",
+          text: "Visas and immigration"
+        },
+        {
+          href: "#",
+          text: "Working, jobs and pensions"
+        }
+      ]
+    },
+    {
+      title: "Government activity",
+      width: "one-third",
+      items: [
+        {
+          href: "#",
+          text: "Departments"
+        },
+        {
+          href: "#",
+          text: "News"
+        },
+        {
+          href: "#",
+          text: "Guidance and regulation"
+        },
+        {
+          href: "#",
+          text: "Research and statistics"
+        },
+        {
+          href: "#",
+          text: "Policy papers and consultations"
+        },
+        {
+          href: "#",
+          text: "Transparency"
+        },
+        {
+          href: "#",
+          text: "How government works"
+        },
+        {
+          href: "#",
+          text: "Get involved"
+        }
+      ]
+    }
+  ],
   meta: {
     items: [
-        {
+      {
+        href: "#",
+        text: "Help"
+      },
+    {
         href: "/pages/privacy-notice.html",
         text: "Privacy"
       },
       {
         href: "/pages/cookies.html",
         text: "Cookies"
+      },
+    {
+        href: "#",
+        text: "Accessibility statement"
+      },
+      {
+        href: "#",
+        text: "Contact"
+      },
+      {
+        href: "#",
+        text: "Terms and conditions"
+      },
+      {
+        href: "#",
+        text: "Rhestr o Wasanaethau Cymraeg",
+        attributes: {
+          lang: "cy",
+          hreflang: "cy"
+        }
+      },
+      {
+        href: "#",
+        text: "Government Digital Service"
       }
-      
     ]
   }
 }) }}
