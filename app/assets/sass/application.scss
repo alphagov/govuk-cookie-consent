@@ -4,3 +4,9 @@
 // 
 
 // Add extra styles here
+
+// Match the GOV.UK font size, prototyping kit uses a smaller font for the footer
+.govuk-footer {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+}
