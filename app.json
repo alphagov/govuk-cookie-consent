@@ -1,0 +1,16 @@
+{
+  "name": "govuk-cookie-consent",
+  "repository": "https://github.com/alphagov/govuk-cookie-consent",
+  "scripts": {},
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
