@@ -10,3 +10,29 @@
     font-size: 1.1875rem;
     line-height: 1.3157894737;
 }
+
+// Cookie banner
+// Copied from govuk_publishing_components/blob/main/app/assets/sass/govuk_publishing_components/components/_cookie-banner.scss
+// Excludes imports at the top of that file
+
+.gem-c-cookie-banner {
+  [hidden],
+  .govuk-button-group[hidden],
+  .govuk-cookie-banner__heading[hidden] {
+    display: none;
+  }
+}
+
+.gem-c-cookie-banner__confirmation {
+  // This element is focused using JavaScript so that it's being read out by screen readers
+  // for this reason we don't want to show the default outline or emphasise it visually using `govuk-focused-text`
+  &:focus {
+    outline: none;
+  }
+}
+
+@include govuk-media-query($media-type: print) {
+  .gem-c-cookie-banner {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}

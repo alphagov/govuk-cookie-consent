@@ -4,5 +4,5 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
+   window.GOVUK.modules.start()
 })

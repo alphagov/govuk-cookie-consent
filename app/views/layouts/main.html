@@ -8,6 +8,14 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
 
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/modules.js"></script>
+  <script src="/public/javascripts/trigger-event.js"></script>
+  <script src="/public/javascripts/cookie-functions.js"></script>
+  <script src="/public/javascripts/cookie-banner.js"></script>
+{% endblock %}
+
 
 {% block header %}
 
