@@ -18,11 +18,27 @@
 }) }}
 {% endblock %}
 
-
 {% block content %}
+
+{% set htmlCookieConfirmation %}
+    <h3 class="govuk-notification-banner__heading">Your cookie settings were saved</h3>
+    <p class="govuk-body">
+        Government services may set additional cookies and, if so, will have their own cookie policy and banner.
+    </p>
+    <a class="govuk-link govuk-notification-banner__link cookie-settings__prev-page" href="#">Go back to the page you were looking at</a>
+{% endset %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <div class="cookie-settings__confirmation" data-cookie-confirmation="true">
+            <div role="alert">
+                {{ govukNotificationBanner({
+                    html: htmlCookieConfirmation,
+                    type: "success"
+                }) }}
+            </div>
+        </div>
+
         <h1 class="govuk-heading-xl">Choose which cookies we use on GOV.UK</h1>
         <p class="govuk-body">Cookies are files saved on your phone, tablet or computer when you visit a website.</p>
 
@@ -30,7 +46,7 @@
 
         <p class="govuk-body">You can choose which cookies you're happy for us to use. <a href="/pages-v2/cookie-details.html">Read our detailed cookie information</a> if you want to know more.</p>
 
-        <form action="/settings" method="post" novalidate>
+        <form action="/settings" method="post" novalidate data-module="cookie-settings">
              <h2 class="govuk-heading-l">Cookies that measure website use</h2>
 
             <p class="govuk-body">We use Google Analytics cookies to collect information about things like:</p>
@@ -69,8 +85,8 @@
             <p class="govuk-body">We do not allow Google or SpeedCurve to use or share this data for their own purposes.</p>
 
             {{ govukRadios({
-            name: "cookies[website-use]",
-            idPrefix: "cookies-website use",
+            name: "cookies-usage",
+            idPrefix: "cookies-usage-radio",
             fieldset: {
                 legend: {
                 text: "Do you want us to use cookies that measure website usage?",
@@ -84,11 +100,11 @@
                 checked:true
                 },
                 {
-                value: "yes",
+                value: "on",
                 text: "Use additional cookies for more detailed website analysis"
                 },
                 {
-                value: "no",
+                value: "off",
                 text: "Do not use any cookies that measure website usage"
                 }
             ]
@@ -98,8 +114,8 @@
             <p class="govuk-body">These cookies may be set by third party websites and do things like measure how you view YouTube videos that are on GOV.UK.</p>
 
             {{ govukRadios({
-            name: "cookies[campaigns]",
-            idPrefix: "cookies-campaigns",
+            name: "cookies-campaigns",
+            idPrefix: "cookies-campaigns-radio",
             fieldset: {
                 legend: {
                 text: "Do you want us to use marketing cookies?",
@@ -108,11 +124,11 @@
             },
             items: [
                 {
-                value: "yes",
+                value: "on",
                 text: "Use cookies that help with communications and marketing"
                 },
                 {
-                value: "no",
+                value: "off",
                 text: "Do not use cookies that help with communications and marketing",
                 checked: true
                 }
@@ -123,8 +139,8 @@
             <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the site.</p>
 
             {{ govukRadios({
-            name: "cookies[settings]",
-            idPrefix: "cookies-settings",
+            name: "cookies-settings",
+            idPrefix: "cookies-settings-radio",
             fieldset: {
                 legend: {
                 text: "Do you want us to use cookies  that remember your settings?",
@@ -133,11 +149,11 @@
             },
             items: [
                 {
-                value: "yes",
+                value: "on",
                 text: "Use cookies that remember my settings on the site"
                 },
                 {
-                value: "no",
+                value: "off",
                 text: "Do not use cookies that remember my settings on the site",
                 checked: true
                 }
