@@ -21,24 +21,34 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     }
 
     var currentConsentCookie = window.GOVUK.cookie('cookies_policy')
-    if (currentConsentCookie) {
-      var currentConsentCookieJSON = JSON.parse(currentConsentCookie)
-      if (currentConsentCookieJSON) {
-        // We don't need the essential value as this cannot be changed by the user
-        delete currentConsentCookieJSON.essential
-        for (var cookieType in currentConsentCookieJSON) {
-          var radioButton
-          if (currentConsentCookieJSON[cookieType]) {
-            radioButton = document.querySelector('input[name=cookies-' + cookieType + '][value=on]')
-          } else {
-            radioButton = document.querySelector('input[name=cookies-' + cookieType + '][value=off]')
-          }
-          if (radioButton) {
-            radioButton.checked = true
-          }
-        }
+    var currentConsentCookieJSON = JSON.parse(currentConsentCookie)
+
+    if (!currentConsentCookie) return
+    if (!currentConsentCookieJSON) return
+
+    // Ignore Essential cookies, separate out other policy entries
+    var { essential, usage, aggregate, ...settingsCampaignsCookies } = currentConsentCookieJSON;
+    
+    // Handle Settings and Campaigns
+    Object.entries(settingsCampaignsCookies).forEach((type) => {
+      var radio = document.querySelector(`input[name="cookies-${type[0]}"][value="${this.getCookiePolicyValue(settingsCampaignsCookies, type[0])}"]`);
+      if (radio) {
+        radio.checked = true;
       }
+    })
+    
+    // Handle Usage policy separately
+    var usagePolicy = { usage, aggregate };
+    var usageRadio = document.querySelector(`input[name="cookies-usage"][value="${this.getUsageRadioValue(usagePolicy,)}"]`);
+    if (usageRadio) {
+      usageRadio.checked = true;
     }
+  }
+
+  CookieSettings.prototype.getUsageRadioValue = function(policy) {
+    if (policy.aggregate) return 'aggregate'
+    if (policy.usage) return 'on'
+    return 'off'
   }
 
   CookieSettings.prototype.submitSettingsForm = function (event) {
@@ -48,16 +58,29 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     var options = {}
 
     for (var i = 0; i < formInputs.length; i++) {
-      var input = formInputs[i]
+      var input = formInputs[i];
+
       if (input.checked) {
-        var name = input.name.replace('cookies-', '')
-        var value = input.value === 'on'
+        var name = input.name.replace('cookies-', '');
+        var val = input.value;
 
-        options[name] = value
+        // Handle "Campaigns" and "Settings"
+        if (name === 'campaigns' || name === 'settings') {
+          options[name] = (val === 'on');
+        }
 
-        if (name === 'usage' && !value) {
-          window.GOVUK.stopSendingAnalytics = true
-          window.GOVUK.LUX = {}
+        // Handle "Usage" and "Aggregate"
+        if (name === 'usage') {
+          if (val === 'off') {
+            options.usage = false;
+            options.aggregate = false;
+          } else if (val === 'on') {
+            options.usage = true;
+            options.aggregate = false;
+          } else if (val === 'aggregate') {
+            options.usage = false;
+            options.aggregate = true;
+          }
         }
       }
     }
@@ -97,6 +120,17 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       console.warn('Error grabbing referrer for cookie settings', window.location, e)
     }
     return documentReferrer
+  }
+
+  CookieSettings.prototype.getRadioButtonAndClick = function (event) {
+  }
+
+  CookieSettings.prototype.getCookiePolicyValue = function (policy, cookieType) {
+    if (policy[cookieType] === true) {
+      return 'on'
+    }
+
+    return 'off'
   }
 
   Modules.CookieSettings = CookieSettings

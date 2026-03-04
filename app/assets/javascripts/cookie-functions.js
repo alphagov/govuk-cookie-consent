@@ -8,6 +8,7 @@
     essential: true,
     settings: false,
     usage: false,
+    aggregate: true,
     campaigns: false
   }
 
@@ -73,6 +74,7 @@
       essential: true,
       settings: true,
       usage: true,
+      aggregate: false,
       campaigns: true
     }
 
