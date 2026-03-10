@@ -19,7 +19,21 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block header %}
 
-    {{ govukHeader() }}
+  {{ govukHeader() }}
+
+  <!-- Using the HTML version of the component so that we can add a hook for JS as the Nunjucks macro doesn't allow this -->
+  <section aria-label="Service information" class="govuk-service-navigation"
+    data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+          <a href="/start" data-module="js-delete-cookies" class="govuk-service-navigation__link">
+            Restart the journey
+          </a>
+        </span>
+      </div>
+    </div>
+  </section>
    
 {% endblock %}
 
@@ -177,8 +191,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         href: "#",
         text: "Government Digital Service"
       }
-    ],
-    html: '<a href="#" class="app-delete-cookies-button govuk-link" data-module="js-delete-cookies">Delete cookies</a>'
+    ]
   }
 }) }}
 
