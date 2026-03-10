@@ -228,4 +228,14 @@
       }
     }
   }
+
+  window.GOVUK.deleteAllCookies = function (e) {
+    //If the element is a link, prevent default
+    if (e && typeof e.preventDefault === 'function') {
+      e.preventDefault()
+    }
+    window.GOVUK.deleteCookie('cookies_policy')
+    window.GOVUK.deleteCookie('cookies_preferences_set')
+  }
+
 }(window))
