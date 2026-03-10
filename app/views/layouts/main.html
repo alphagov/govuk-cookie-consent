@@ -19,7 +19,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block header %}
 
-  {{ govukHeader() }}
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
 
   <!-- Using the HTML version of the component so that we can add a hook for JS as the Nunjucks macro doesn't allow this -->
   <section aria-label="Service information" class="govuk-service-navigation"
@@ -192,6 +194,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         text: "Government Digital Service"
       }
     ]
+  },
+  contentLicence: {
+    html: 'All content is available under the <a class="govuk-footer__link" href="#" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
   }
 }) }}
 
