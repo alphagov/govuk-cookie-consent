@@ -107,3 +107,9 @@ router.post('/pages-v2/banner-reject', function (req, res) {
     } 
 
 })
+
+// Version 3.0.0 routing
+
+router.get('/start', function(request, response) {
+    response.redirect("/pages-v3/start")
+})

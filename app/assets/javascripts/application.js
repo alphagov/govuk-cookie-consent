@@ -4,5 +4,10 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
+   window.GOVUK.modules.start()
+
+   const cookieBannerDeleteCookiesButton = document.querySelector('[data-module=js-delete-cookies]')
+   if (cookieBannerDeleteCookiesButton) {
+      cookieBannerDeleteCookiesButton.addEventListener('click', window.GOVUK.deleteAllCookies)
+   }
 })

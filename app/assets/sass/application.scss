@@ -5,8 +5,45 @@
 
 // Add extra styles here
 
+@import "cookie-settings";
+
 // Match the GOV.UK font size, prototyping kit uses a smaller font for the footer
 .govuk-footer {
     font-size: 1.1875rem;
     line-height: 1.3157894737;
+}
+
+// Notification banner
+// The Gem notification component supports a margin property,
+// but since we're using the Design System version here,
+// that option isn’t available — so we apply a spacing override instead.
+
+.govuk-notification-banner {
+  @include govuk-responsive-margin(6, "bottom");
+}
+
+// Cookie banner
+// Copied from govuk_publishing_components/blob/main/app/assets/sass/govuk_publishing_components/components/_cookie-banner.scss
+// Excludes imports at the top of that file
+
+.gem-c-cookie-banner {
+  [hidden],
+  .govuk-button-group[hidden],
+  .govuk-cookie-banner__heading[hidden] {
+    display: none;
+  }
+}
+
+.gem-c-cookie-banner__confirmation {
+  // This element is focused using JavaScript so that it's being read out by screen readers
+  // for this reason we don't want to show the default outline or emphasise it visually using `govuk-focused-text`
+  &:focus {
+    outline: none;
+  }
+}
+
+@include govuk-media-query($media-type: print) {
+  .gem-c-cookie-banner {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
 }
