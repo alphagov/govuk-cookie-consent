@@ -1,5 +1,8 @@
 {% extends "layouts/main.html" %}
 
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
 {% block pageTitle %}
   GOV.UK cookie banner page
 {% endblock %}
@@ -34,7 +37,7 @@
   <button class="gem-c-button govuk-button" type="submit" data-reject-cookies="true">Reject additional cookies</button>
 
 
-        <a class="govuk-link" href="help/cookies">View cookies</a>
+        <a class="govuk-link" href="help/cookies">Change your cookie settings</a>
     </div>
     <div hidden class="js-hide-button govuk-button-group">
       <button
@@ -50,5 +53,162 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="govuk-heading-xl">This is a landing page</h1>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Renew your driving licence</h1>
+
+      <p class="govuk-body">Renew your:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          full driving licence
+        </li>
+        <li>
+          provisional driving licence
+        </li>
+      </ul>
+
+      <p class="govuk-body">It costs £14 when you apply online.</p>
+
+      <p class="govuk-body">You must renew a photocard licence every 10 years - you’ll receive a reminder before your current licence ends.</p>
+      <p class="govuk-body">To renew your licence, you must:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          be a resident of Great Britain (there’s a different service in Northern Ireland)
+        </li>
+        <li>
+          not be disqualified from driving
+        </li>
+      </ul>
+
+      <p class="govuk-body">You’ll need to apply for your first provisional licence if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          you’ve never applied for a provisional licence before
+        </li>
+        <li>
+          you applied for a provisional licence before 1 March 1973
+        </li>
+      </ul>
+
+      <p class="govuk-body">There’s a different way to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          renew your licence if you’re 70 or over
+        </li>
+        <li>
+          renew a 5-year bus or lorry licence
+        </li>
+        <li>
+          renew a short-term medical driving licence
+        </li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        This page is also available in Welsh (Cymraeg).
+      </div>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p class="govuk-body">If you cannot use the online service, you can apply at a Post Office or by post.</p>
+
+      <h3 class="govuk-heading-s">If your name or title has changed</h3>
+
+      <p class="govuk-body">If your name or title has changed since you got your current driving licence, you must apply by post. You cannot renew it online or at a Post Office.</p>
+
+      <h2 class="govuk-heading-m">Sign in to renew online</h2>
+
+      <p class="govuk-body">You’ll need to sign in to use this service. If you do not already have sign in details, you’ll be able to create them.</p>
+
+      <p class="govuk-body">You’ll be told when you sign in if you need to prove your identity. This is to keep your details safe and usually involves using photo ID like a passport or driving licence.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">After you renew online</h2>
+
+      <p class="govuk-body">Your new licence will be valid from the date your application is approved, not from the expiry date of your current licence.</p>
+
+      <h2 class="govuk-heading-m">How much it costs</h2>
+
+      <p class="govuk-body">Renewing your licence online costs £14. You can pay by MasterCard, Visa, Electron or Delta debit or credit card (there’s no fee if you’re over 70 or have a medical short period licence).</p>
+
+      <h2 class="govuk-heading-m">How long it takes</h2>
+
+      <p class="govuk-body">Your driving licence should arrive within a week if you apply online.</p>
+
+      {{ govukInsetText({
+        text: "You must send your old photocard licence to DVLA when you get your new licence. You’ll be told the address to use when you finish the application."
+      }) }}
+
+      <h2 class="govuk-heading-m">Personal data</h2>
+
+      <p class="govuk-body">DVLA will send you a confirmation email once you’ve applied. You might be asked to take part in research by email, but you can opt out.</p>
+
+      <h2 class="govuk-heading-m">Apply at a Post Office</h2>
+
+      <p class="govuk-body">You’ll get a reminder letter in the post. Take it to a Post Office that deals with DVLA photocard licence renewal.</p>
+
+      <p class="govuk-body">You also need to take:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          your photocard licence if you have it
+        </li>
+        <li>
+          the £21.50 fee
+        </li>
+      </ul>
+
+      <p class="govuk-body">If you do not have a reminder letter, you’ll need your photocard licence to apply at the Post Office.</p>
+
+      {{ govukInsetText({
+        text: "You cannot apply at the Post Office if your name has changed. You’ll need to apply by post."
+      }) }}
+
+      <h2 class="govuk-heading-m">Apply by post</h2>
+
+      <p class="govuk-body">Get a ‘D1 pack’ of forms from a Post Office that deals with DVLA photocard renewal or vehicle tax.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          a recent printed passport type photo (do not sign the back of the photo)
+        </li>
+        <li>
+          your current photocard licence, if you have it
+        </li>
+        <li>
+          a cheque or postal order for £17, payable to DVLA (no fee is needed if you have a medical short period licence or you’re aged 70 or over)
+        </li>
+      </ul>
+
+      <p class="govuk-body">You also need to include identity documents if you’ve changed your name.</p>
+
+      <p class="govuk-body">Send the application to:</p>
+
+      <div class="govuk-inset-text">
+        <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>
+        <br>
+        Swansea 
+        <br>
+        SA99 1DH
+      </div>
+
+      <h2 class="govuk-heading-m">After you apply at a Post Office or by post</h2>
+
+      <p class="govuk-body">Your driving licence should arrive within 3 weeks. It might take longer if your medical or personal details need to be checked.</p>
+
+      <p class="govuk-body">You can continue driving while you wait for your new licence to arrive.</p>
+  </div>
+</div>
+
+
+
+
 {% endblock %}
