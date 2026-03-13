@@ -113,3 +113,7 @@ router.post('/pages-v2/banner-reject', function (req, res) {
 router.get('/start', function(request, response) {
     response.redirect("/pages-v3/start")
 })
+
+router.post('/pages-v3/start', function (req, res) {
+    res.render('/pages-v3/start')
+})

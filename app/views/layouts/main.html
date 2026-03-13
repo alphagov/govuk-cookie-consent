@@ -189,16 +189,22 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 }) }}
 
 <!-- Using the HTML version of the component so that we can add a hook for JS as the Nunjucks macro doesn't allow this -->
-  <section aria-label="Restart the journey" class="govuk-service-navigation"
-    data-module="govuk-service-navigation">
-    <div class="govuk-width-container">
-      <div class="govuk-service-navigation__container">
-        <span class="govuk-service-navigation__service-name">
-          <a href="/start" data-module="js-delete-cookies" class="govuk-service-navigation__link">
+
+<section aria-label="Restart the journey" class="restart-section">
+    <div class="govuk-width-container restart-helper">
+      
+          <!-- <a href="/start" data-module="js-delete-cookies" class="">
             Restart the journey
-          </a>
-        </span>
-      </div>
+          </a> -->
+
+          <form action="/pages-v3/start" method="post" novalidate>  
+            <button type="submit" data-module="js-delete-cookies" class="govuk-button govuk-button--inverse" >
+            Restart journey
+            </button>
+          </form>
+         
+
+      
     </div>
   </section>
 

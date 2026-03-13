@@ -47,3 +47,11 @@
     display: none !important; // stylelint-disable-line declaration-no-important
   }
 }
+
+.restart-section{
+  background-color: 	#0f385c;
+}
+.restart-helper{
+  @include govuk-responsive-padding(6, "bottom");
+  @include govuk-responsive-padding(6, "top");
+}
