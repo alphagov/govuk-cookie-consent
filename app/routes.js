@@ -110,10 +110,20 @@ router.post('/pages-v2/banner-reject', function (req, res) {
 
 // Version 3.0.0 routing
 
-router.get('/start', function(request, response) {
-    response.redirect("/pages-v3/start")
-})
+// router.get('/start', function(request, response) {
+//     response.redirect("/pages-v3/start")
+// })
 
 router.post('/pages-v3/start', function (req, res) {
     res.render('/pages-v3/start')
+})
+
+// Version 4.0.0 routing
+
+router.get('/start', function(request, response) {
+    response.redirect("/pages-v4/start")
+})
+
+router.post('/pages-v4/start', function (req, res) {
+    res.render('/pages-v4/start')
 })
