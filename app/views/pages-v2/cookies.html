@@ -30,10 +30,13 @@
 
         <p class="govuk-body">You can choose which cookies you're happy for us to use. <a href="/pages-v2/cookie-details.html">Read our detailed cookie information</a> if you want to know more.</p>
 
-        <form action="/settings" method="post" novalidate>
-             <h2 class="govuk-heading-l">Cookies that measure website use</h2>
+        <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+            <p class="govuk-body">These essential cookies do things like remember your progress through a form (for example a licence application). They always need to be on.</p>
 
-            <p class="govuk-body">We use Google Analytics cookies to collect information about things like:</p>
+        <form action="/settings" method="post" novalidate>
+             <!-- <h2 class="govuk-heading-l">Cookies that measure website use</h2> -->
+
+            <!-- <p class="govuk-body">We use Google Analytics cookies to collect information about things like:</p>
 
             <ul class="govuk-list govuk-list--bullet">
                 <li>
@@ -58,23 +61,24 @@
             </ul>
 
             <p class="govuk-body">We also use LUX Real User Monitoring software cookies from SpeedCurve to measure, for example:</p>
-               <ul class="govuk-list govuk-list--bullet">
+            <ul class="govuk-list govuk-list--bullet">
                 <li>
-              how well the website performed on your device during your visit
-                  </li>
+            how well the website performed on your device during your visit
+                </li>
                 <li>if there were any functionality errors
-               </li>
-            </ul>
+            </li>
+            </ul> -->
 
-            <p class="govuk-body">We do not allow Google or SpeedCurve to use or share this data for their own purposes.</p>
+            <!-- <p class="govuk-body">We do not allow Google or SpeedCurve to use or share this data for their own purposes.</p> -->
 
             {{ govukRadios({
             name: "cookies[website-use]",
             idPrefix: "cookies-website use",
             fieldset: {
                 legend: {
-                text: "Do you want us to use cookies that measure website usage?",
-                classes: "govuk-fieldset__legend--s"
+                text: "Cookies that measure website use",
+                classes: "govuk-fieldset__legend--l",
+                isPageHeading: true
                 }
             },
             items: [
@@ -94,41 +98,24 @@
             ]
             }) }}
 
-            <h2 class="govuk-heading-l">Cookies that help with our communications and marketing</h2>
-            <p class="govuk-body">These cookies may be set by third party websites and do things like measure how you view YouTube videos that are on GOV.UK.</p>
-
-            {{ govukRadios({
-            name: "cookies[campaigns]",
-            idPrefix: "cookies-campaigns",
-            fieldset: {
-                legend: {
-                text: "Do you want us to use marketing cookies?",
-                classes: "govuk-fieldset__legend--s"
-                }
-            },
-            items: [
-                {
-                value: "yes",
-                text: "Use cookies that help with communications and marketing"
-                },
-                {
-                value: "no",
-                text: "Do not use cookies that help with communications and marketing",
-                checked: true
-                }
-            ]
+             {{ govukDetails({
+                summaryText: "What are website use cookies?",
+                text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
             }) }}
 
-            <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
-            <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the site.</p>
+          
+
+            <!-- <h2 class="govuk-heading-l">Cookies that remember your settings</h2> -->
+            <!-- <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the site.</p> -->
 
             {{ govukRadios({
             name: "cookies[settings]",
             idPrefix: "cookies-settings",
             fieldset: {
                 legend: {
-                text: "Do you want us to use cookies  that remember your settings?",
-                classes: "govuk-fieldset__legend--s"
+                text: "Cookies that remember your settings",
+                classes: "govuk-fieldset__legend--l",
+                isPageHeading: true
                 }
             },
             items: [
@@ -144,8 +131,44 @@
             ]
             }) }}
 
-            <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
-            <p class="govuk-body">These essential cookies do things like remember your progress through a form (for example a licence application). They always need to be on.</p>
+                 {{ govukDetails({
+                summaryText: "What are settings cookies?",
+                text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+            }) }}
+
+              <!-- <h2 class="govuk-heading-l">Cookies that help with our communications and marketing</h2> -->
+            <!-- <p class="govuk-body">These cookies may be set by third party websites and do things like measure how you view YouTube videos that are on GOV.UK.</p> -->
+
+            {{ govukRadios({
+            name: "cookies[campaigns]",
+            idPrefix: "cookies-campaigns",
+            fieldset: {
+                legend: {
+                text: "Cookies that help with our communications and marketing",
+                classes: "govuk-fieldset__legend--l",
+                isPageHeading: true
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Use cookies that help with communications and marketing"
+                },
+                {
+                value: "no",
+                text: "Do not use cookies that help with communications and marketing",
+                checked: true
+                }
+            ]
+            }) }}
+
+            {{ govukDetails({
+                summaryText: "What are marketing cookies?",
+                text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+            }) }}
+
+            <!-- <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+            <p class="govuk-body">These essential cookies do things like remember your progress through a form (for example a licence application). They always need to be on.</p> -->
 
             {{ govukButton({
             text: "Save changes"
