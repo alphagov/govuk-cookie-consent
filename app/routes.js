@@ -127,3 +127,7 @@ router.get('/start', function(request, response) {
 router.post('/pages-v4/start', function (req, res) {
     res.render('/pages-v4/start')
 })
+
+router.post('/pages-v5/start', function (req, res) {
+    res.render('/pages-v5/start')
+})
