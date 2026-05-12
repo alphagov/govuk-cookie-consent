@@ -14,7 +14,20 @@
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on GOV.UK</h2>
         <div tabindex="-1" class="govuk-cookie-banner__content gem-c-cookie-banner__confirmation">
-          <div class="gem-c-cookie-banner__content"><p class='govuk-body'>We use essential cookies to make this website work.</p> <p class='govuk-body'>We also use cookies to collect general information about how GOV.UK is used - you can opt out of these.</p><p class='govuk-body'>We'd like to set additional cookies to remember your settings, and improve the website and government services.</p><p class='govuk-body'>You cannot be identified from the information.</p></div>
+          <div class="gem-c-cookie-banner__content">
+            <p class="govuk-body">We use the following cookies:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                essential cookies that make the website work - these are always on
+              </li>
+              <li>
+                cookies to understand how the website is used - you can opt out of these
+              </li>
+            </ul>
+            <p class='govuk-body'>We’d like to set additional cookies to help us improve the website and remember your settings.</p>
+            <p class="govuk-body"><a class="govuk-link" href="help/cookies">Change your cookie settings</a></p>
+          </div>
+
           <p class="gem-c-cookie-banner__confirmation-message--accepted govuk-body" hidden
             data-ga4-cookie-banner 
             data-module="ga4-link-tracker"
@@ -28,11 +41,11 @@
     </div>
     <div class="js-confirmation-buttons govuk-button-group">      
 
-      <button class="gem-c-button govuk-button" type="submit" data-accept-cookies="true" data-cookie-types="all">Accept additional cookies</button>   
+      <button class="gem-c-button govuk-button" type="submit" data-accept-cookies="true" data-cookie-types="all">Accept all cookies</button> 
+      
+      <button class="gem-c-button govuk-button" type="submit" data-reject-cookies="true">Keep current settings</button> 
 
-      <button class="gem-c-button govuk-button" type="submit" data-reject-cookies="true">Reject additional cookies</button>
-
-      <a class="govuk-link" href="help/cookies">Change your cookie settings</a>
+      
   </div>
 
     <div hidden class="js-hide-button govuk-button-group">
@@ -151,6 +164,9 @@
 
 {% block footer %}
 
-{% include "pages-v3/_partials/footer.html" %}
+{% include "pages-v6/_partials/footer.html" %}
 
 {%endblock %}
+
+
+
