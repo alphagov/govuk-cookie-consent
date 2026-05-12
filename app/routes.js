@@ -118,16 +118,24 @@ router.post('/pages-v3/start', function (req, res) {
     res.render('/pages-v3/start')
 })
 
-// Version 4.0.0 routing
+//  routing
 
-router.get('/start', function(request, response) {
-    response.redirect("/pages-v4/start")
-})
+// router.get('/start', function(request, response) {
+//     response.redirect("/pages-v4/start")
+// })
 
 router.post('/pages-v4/start', function (req, res) {
-    res.render('/pages-v4/start')
+    res.redirect('/pages-v4/start')
 })
 
 router.post('/pages-v5/start', function (req, res) {
-    res.render('/pages-v5/start')
+    res.redirect('/pages-v5/start')
 })
+
+router.post('/pages-v6/start', function (req, res) {
+    res.redirect('/pages-v6/start')
+})
+
+// router.get('/start', function(request, response) {
+//     response.redirect("/pages-v6/start")
+// })
